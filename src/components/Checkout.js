@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaCreditCard, FaMoneyBill, FaQrcode } from 'react-icons/fa';
 
-function Checkout({ cartItems, total }) {
+function Checkout({ cart = [], user }) {
   const navigate = useNavigate();
   const [paymentMethod, setPaymentMethod] = useState('credit');
   const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ function Checkout({ cartItems, total }) {
     phone: '',
     email: ''
   });
+  const total = (cart || []).reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -178,7 +179,7 @@ function Checkout({ cartItems, total }) {
         <div>
           <h2>Đơn hàng của bạn</h2>
           <div style={{ backgroundColor: '#f8f9fa', padding: '1rem', borderRadius: '8px' }}>
-            {cartItems.map(item => (
+            {(cart || []).map(item => (
               <div
                 key={item.id}
                 style={{
