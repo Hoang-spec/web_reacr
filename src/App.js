@@ -133,7 +133,7 @@ function App() {
           position: 'sticky',
           top: 0,
           zIndex: 1000,
-          height : 'rem'
+          height: '4rem'
         }}>
           <div style={{
             maxWidth: '1200px',
@@ -153,9 +153,18 @@ function App() {
               alignItems: 'center',
               gap: '0.5rem'
             }}>
-              <i className="fas fa-store"></i> 
+              <i className="fas fa-store"></i> Siêu Thị Online
             </a>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+              <a href="/" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500 }}>
+                <i className="fas fa-home"></i> Trang chủ
+              </a>
+              <a href="/products" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500 }}>
+                <i className="fas fa-mobile-alt"></i> Sản phẩm
+              </a>
+              <a href="/news" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500 }}>
+                <i className="fas fa-newspaper"></i> Tin tức
+              </a>
               <a href="/cart" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500 }}>
                 <i className="fas fa-shopping-cart"></i> Giỏ hàng
               </a>
@@ -226,62 +235,49 @@ function App() {
           position: 'relative',
           boxShadow: '0 -4px 32px 0 rgba(49,46,129,0.18)'
         }}>
-          <div style={{ fontSize: '2rem', fontWeight: 900, marginBottom: 8, letterSpacing: '-1px', color: '#fbbf24' }}>
-            <i className="fas fa-store" style={{ marginRight: 10 }}></i> Siêu Thị Online
-          </div>
-          <div style={{ fontSize: '1.1rem', fontWeight: 500, marginBottom: 18, color: '#fbbf24', opacity: 0.95 }}>
-            Mua sắm công nghệ - Giá tốt mỗi ngày!
-          </div>
-          <div style={{
-            display: 'flex', justifyContent: 'center', gap: 32, marginBottom: 18, flexWrap: 'wrap'
-          }}>
-            <a href="#" style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 500 }}>Về chúng tôi</a>
-            <a href="#" style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 500 }}>Chính sách bảo mật</a>
-            <a href="#" style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 500 }}>Hỗ trợ khách hàng</a>
-            <a href="#" style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 500 }}>Liên hệ</a>
-          </div>
-          <div style={{
-            display: 'flex', justifyContent: 'center', gap: 40, marginBottom: 18, flexWrap: 'wrap'
-          }}>
-            <div>
-              <div style={{ fontWeight: 600, marginBottom: 4 }}>Hotline:</div>
-              <a href="tel:0123456789" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500 }}>0123 456 789</a>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', marginBottom: '2rem' }}>
+              <div>
+                <h3 style={{ color: '#fbbf24', marginBottom: '1rem' }}>Về chúng tôi</h3>
+                <p style={{ lineHeight: 1.6 }}>Siêu Thị Online - Nơi mua sắm công nghệ uy tín, chất lượng với giá tốt nhất thị trường.</p>
+              </div>
+              <div>
+                <h3 style={{ color: '#fbbf24', marginBottom: '1rem' }}>Liên kết nhanh</h3>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  <li><a href="/about" style={{ color: '#fff', textDecoration: 'none' }}>Về chúng tôi</a></li>
+                  <li><a href="/contact" style={{ color: '#fff', textDecoration: 'none' }}>Liên hệ</a></li>
+                  <li><a href="/blog" style={{ color: '#fff', textDecoration: 'none' }}>Tin tức</a></li>
+                  <li><a href="/policy" style={{ color: '#fff', textDecoration: 'none' }}>Chính sách</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 style={{ color: '#fbbf24', marginBottom: '1rem' }}>Hỗ trợ khách hàng</h3>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  <li><a href="/faq" style={{ color: '#fff', textDecoration: 'none' }}>Câu hỏi thường gặp</a></li>
+                  <li><a href="/shipping" style={{ color: '#fff', textDecoration: 'none' }}>Vận chuyển</a></li>
+                  <li><a href="/returns" style={{ color: '#fff', textDecoration: 'none' }}>Đổi trả</a></li>
+                  <li><a href="/warranty" style={{ color: '#fff', textDecoration: 'none' }}>Bảo hành</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 style={{ color: '#fbbf24', marginBottom: '1rem' }}>Liên hệ</h3>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  <li><i className="fas fa-phone"></i> Hotline: 0123 456 789</li>
+                  <li><i className="fas fa-envelope"></i> Email: support@sieuthionline.com</li>
+                  <li><i className="fas fa-map-marker-alt"></i> Địa chỉ: 123 Đường ABC, Quận XYZ, TP.HCM</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <div style={{ fontWeight: 600, marginBottom: 4 }}>Email:</div>
-              <a href="mailto:support@sieuthionline.vn" style={{ color: '#fff', textDecoration: 'none', fontWeight: 500 }}>support@sieuthionline.vn</a>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                <a href="#" style={{ color: '#fbbf24', fontSize: '1.5rem' }}><i className="fab fa-facebook"></i></a>
+                <a href="#" style={{ color: '#fbbf24', fontSize: '1.5rem' }}><i className="fab fa-twitter"></i></a>
+                <a href="#" style={{ color: '#fbbf24', fontSize: '1.5rem' }}><i className="fab fa-instagram"></i></a>
+                <a href="#" style={{ color: '#fbbf24', fontSize: '1.5rem' }}><i className="fab fa-youtube"></i></a>
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.7)' }}>© 2024 Siêu Thị Online. Tất cả quyền được bảo lưu.</p>
             </div>
-            <div>
-              <div style={{ fontWeight: 600, marginBottom: 4 }}>Địa chỉ:</div>
-              <span style={{ color: '#fff', fontWeight: 500 }}>123 Đường Công Nghệ, Quận 1, TP.HCM</span>
-            </div>
           </div>
-          <div style={{ marginBottom: 18 }}>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{
-              color: '#fff', fontSize: 28, margin: '0 10px', transition: 'color 0.2s'
-            }}>
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{
-              color: '#fff', fontSize: 28, margin: '0 10px', transition: 'color 0.2s'
-            }}>
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" style={{
-              color: '#fff', fontSize: 28, margin: '0 10px', transition: 'color 0.2s'
-            }}>
-              <i className="fab fa-tiktok"></i>
-            </a>
-            <a href="mailto:support@sieuthionline.vn" style={{
-              color: '#fff', fontSize: 28, margin: '0 10px', transition: 'color 0.2s'
-            }}>
-              <i className="fas fa-envelope"></i>
-            </a>
-          </div>
-          <div style={{ fontSize: '1rem', opacity: 0.8 }}>
-            &copy; {new Date().getFullYear()} Siêu Thị Online. All rights reserved.
-          </div>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         </footer>
       </div>
     </Router>
